@@ -7,6 +7,7 @@ import React, {
 } from 'react-native';
 var Camera = require('react-native-camera');
 import SubmitWormhole from '../containers/SubmitWormhole';
+var WebRTC = require('react-native-webrtc');
 
 class CameraView extends Component {
   _switchCamera() {
@@ -47,7 +48,7 @@ class CameraView extends Component {
   }
   componentWillMount() {
     let { initCameraState } = this.props;
-    
+    debugger;
     initCameraState({
       cameraType: Camera.constants.Type.back,
       captureMode: Camera.constants.CaptureMode.video,

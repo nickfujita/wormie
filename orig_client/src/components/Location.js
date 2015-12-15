@@ -7,11 +7,17 @@ import React, {
 } from 'react-native';
 // import Signup from '../components/Signup';
 import Navbar from './Navbar';
+import LiveStream from './LiveStream';
 
 class Location extends Component {
   goToHome() {
     this.props.navigator.replace({
       component: Navbar
+    });
+  }
+  goToLiveStream() {
+    this.props.navigator.replace({
+      component: LiveStream
     });
   }
   render() {
@@ -21,6 +27,13 @@ class Location extends Component {
         <View style={styles.splashImage}>
           <Text style={styles.buttonText}> Can i has location? </Text>
         </View>
+        <TouchableHighlight
+          style = {styles.loginButton}
+          onPress = {this.goToLiveStream.bind(this)}
+          underlayColor = '#88D4f5'
+        >
+          <Text style = {styles.buttonText}> I r Live! </Text>
+        </TouchableHighlight>
         <TouchableHighlight
           style = {styles.loginButton}
           onPress = {this.goToHome.bind(this)}
